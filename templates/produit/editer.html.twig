@@ -1,0 +1,23 @@
+{# {% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form(form)}}
+     {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
+{% endblock %} #}
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Formation{% endblock %}
+
+{% block body %}
+    <h1 align="center">Créer une nouvelle formation</h1><br>
+    <div class="container" align="center">
+        <div class="row col-4 shadow-lg p-3 mb-5 bg-body rounded">
+            {# {{ include('formation/_form.html.twig') }} #}
+             {{ form(form)}}
+            <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
+        </div>
+    </div>
+{% endblock %}

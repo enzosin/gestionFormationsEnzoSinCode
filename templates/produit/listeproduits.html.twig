@@ -1,0 +1,12 @@
+Vous êtes dans la liste des Produits: </br>
+{% if (message)%}
+    {{message}}
+{% endif %}
+{% for produit in ensProduit %}
+   
+    libelle produit : {{ produit.libelle}}<br/>
+
+{# <a href="{{path('app_film_sup', {'id': film.id} )}}">suppression</a></br> #}
+{% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
+{% endfor %}

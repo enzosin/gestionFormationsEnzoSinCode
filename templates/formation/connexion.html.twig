@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <h1>Se connecter</h1>
+
+    {# nous testons si la variable message existe #}
+    {% if message is defined %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endif %}
+
+    {# {{ include('utilisateur/_form.html.twig', {'button_label': 'Se connecter'}) }} #}
+
+    {# <a href="{{ path('utilisateur_index') }}">back to list</a> #}
+{% endblock %}

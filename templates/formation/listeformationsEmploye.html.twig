@@ -1,0 +1,45 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+
+
+
+<br><br><br><figure class="text-center"><h1 >Vous êtes dans la liste des Formations: </h1></br></figure>
+{% if (message)%}
+    {{message}}
+{% endif %}
+
+   <div class="container"><div class="shadow-lg p-3 mb-5 bg-body rounded"> 
+
+    
+     <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Departement</th>
+      <th scope="col">Date Début</th>
+      <th scope="col">Nombres Heures</th>
+      <th scope="col">Libelle Produit</th>
+      <th scope="col">Inscrire</th>
+      
+    
+    </tr>
+  </thead>
+  <tbody>
+  {% for formationsE in ensFormationsEmploye %}
+  
+    <tr>
+      <td><b>{{ formationsE.departement}} </b></td>
+      <td><b>{{ formationsE.dateDebut|date("m/d/Y") }}</b></td>
+      <td><b>{{ formationsE.nbreHeures}} </b></td>
+      <td><b>{{ formationsE.produit.libelle}}</b></td>
+      <td> <a href="{{path('app_formation_inscrire', {'id': formationsE.id} )}}">Inscrire</a>  </td>
+      
+    </tr>
+   {% endfor %} 
+  </tbody>
+</table>
+   
+</div></div> 
+
+{% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="{{ asset('css/style1.css') }}">
